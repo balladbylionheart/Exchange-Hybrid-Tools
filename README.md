@@ -10,19 +10,40 @@ The repository is structured for clarity and modularity. Each folder contains sc
 
 ```
 O365-Automation-and-AD-Management-Tools/
-├── PowerShell-Scripts/
-│   ├── AD-Creation/
+├── Active-Directory/
+│   ├── AD-User-Creation/
 │   │   ├── AD-Creation-Basic/
+│   │   │   ├── ad-creation-basic.ps1
+│   │   │   ├── README.md
 │   │   ├── AD-Creation-Detailed/
-│   │   └── AD-O365Hybrid-UserCreation/
-│   ├── AD-Termination/
-│   ├── Exchange-Scripts/
-│   │   ├── ExchangeOnlineManagement/
-│   │   └── HybridMigration/
-│   └── PS-Cheatsheet/
-│       ├── Exchange-Cheatsheet/
-│       ├── Network-Cheatsheet/
-│       └── General-Cheatsheet/
+│   │   │   ├── ad-creation-detailed.ps1
+│   │   │   ├── README.md
+│   │   ├── AD-O365Hybrid-UserCreation/
+│   │       ├── ad-o365hybrid-usercreation.ps1
+│   │       ├── README.md
+│   ├── AD-User-Termination/
+│       ├── ad-termination.ps1
+│       ├── README.md
+├── Exchange/
+│   ├── ExchangeOnlineManagement/
+│   │   ├── exchangeonlinemanagement.ps1
+│   │   ├── README.md
+│   ├── HybridMigration/
+│   │   ├── sample-migration.csv
+│   │   ├── migration-logs/
+│   │   │   ├── README.md
+│   │   ├── hybrid-migration-script.ps1
+│   │   ├── README.md
+├── PowerShell-Cheatsheets/
+│   ├── Exchange-Cheatsheet/
+│   │   ├── exchange-cheatsheet.ps1
+│   │   ├── README.md
+│   ├── General-Cheatsheet/
+│   │   ├── general-cheatsheet.ps1
+│   │   ├── README.md
+│   ├── Network-Cheatsheet/
+│       ├── network-cheatsheet.ps1
+│       ├── README.md
 ├── Azure-Portfolio/
 │   ├── AzureAD-UserManagement/
 │   ├── Azure-Resource-Deployment/
@@ -32,7 +53,6 @@ O365-Automation-and-AD-Management-Tools/
 │   ├── Azure-DevOps-Pipeline/
 │   ├── Azure-Backup-DR/
 │   └── Azure-MFA-Reports/
-├── .vscode/
 ├── .gitignore
 ├── LICENSE.md
 ├── README.md
@@ -41,7 +61,9 @@ O365-Automation-and-AD-Management-Tools/
 ---
 
 ## **Table of Contents**
-- [PowerShell Scripts](#powershell-scripts)
+- [Active Directory Scripts](#active-directory-scripts)
+- [Exchange Scripts](#exchange-scripts)
+- [PowerShell Cheatsheets](#powershell-cheatsheets)
 - [Azure Portfolio](#azure-portfolio)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
@@ -49,15 +71,36 @@ O365-Automation-and-AD-Management-Tools/
 
 ---
 
-## **PowerShell Scripts**
-The **PowerShell-Scripts** directory contains automation tools and resources for managing AD creation, Exchange scripts, and PowerShell cheatsheets.
+## **Active Directory Scripts**
+This section includes tools for managing AD user accounts, including creation, termination, and hybrid management.
 
-| **Category**       | **Description**                         |
-|-------------------|-----------------------------------------|
-| [AD-Creation](./PowerShell-Scripts/AD-Creation)  | Automated tools for creating AD accounts, including O365 hybrid user creation. |
-| [AD-Termination](./PowerShell-Scripts/AD-Termination) | Scripts for user de-provisioning and AD account termination. |
-| [Exchange-Scripts](./PowerShell-Scripts/Exchange-Scripts) | Scripts to automate Exchange Online Management and Hybrid Migrations. |
-| [PS-Cheatsheet](./PowerShell-Scripts/PS-Cheatsheet) | Handy PowerShell cheatsheets for Exchange, Networks, and general-purpose commands. |
+| **Category**                 | **Description**                                           |
+|------------------------------|-----------------------------------------------------------|
+| [AD-Creation-Basic](./Active-Directory/AD-User-Creation/AD-Creation-Basic)            | Simple user creation scripts with role-based permissions. |
+| [AD-Creation-Detailed](./Active-Directory/AD-User-Creation/AD-Creation-Detailed)         | Advanced user creation scripts with detailed workflows.   |
+| [AD-O365Hybrid-UserCreation](./Active-Directory/AD-User-Creation/AD-O365Hybrid-UserCreation)  | Hybrid user creation for Azure AD and O365.               |
+| [AD-User-Termination](./Active-Directory/AD-User-Termination)         | Secure and automated de-provisioning scripts.            |
+
+---
+
+## **Exchange Scripts**
+Scripts to manage Exchange Online, including mailbox migration and hybrid environment setup.
+
+| **Category**              | **Description**                                           |
+|---------------------------|-----------------------------------------------------------|
+| [ExchangeOnlineManagement](./Exchange/ExchangeOnlineManagement) | Manage Exchange Online settings and operations.           |
+| [HybridMigration](./Exchange/HybridMigration)           | Scripts for migrating mailboxes in hybrid environments.   |
+
+---
+
+## **PowerShell Cheatsheets**
+Quick reference scripts for common PowerShell tasks.
+
+| **Category**          | **Description**                                    |
+|-----------------------|----------------------------------------------------|
+| [Exchange-Cheatsheet](./Powershell-Cheatsheets/Exchange-Cheatsheet)   | Commands for managing Exchange Online and Hybrid. |
+| [General-Cheatsheet](./Powershell-Cheatsheets/General-Cheatsheet)     | General-purpose PowerShell commands.               |
+| [Network-Cheatsheet](./Powershell-Cheatsheets/Network-Cheatsheet)     | Networking-related PowerShell commands.            |
 
 ---
 
@@ -89,10 +132,10 @@ To use any of the tools or projects in this repository:
 2. **Navigate to the Specific Folder**:  
    Each folder contains usage instructions in the **README.md**.  
 
-3. **Run PowerShell Scripts**:  
-   Run scripts directly from PowerShell with administrative privileges:  
+3. **Run PowerShell Scripts**:
+   Execute scripts directly from PowerShell with administrative privileges:
    ```powershell
-   ./AD-Creation/AD-Creation-Basic/AD-Creation-Basic.ps1
+   ./Active-Directory/AD-User-Creation/AD-Creation-Basic/ad-creation-basic.ps1
    ```
 
 ---
