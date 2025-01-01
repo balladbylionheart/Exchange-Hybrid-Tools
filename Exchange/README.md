@@ -107,3 +107,8 @@ This script is intended for **educational purposes only**. Use it at your own ri
 
 ## **License**
 This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+
+---
+
+## **Contact**
+For questions or suggestions, refer to the [main README](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/README.md)

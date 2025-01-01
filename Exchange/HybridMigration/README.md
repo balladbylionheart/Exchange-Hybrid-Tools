@@ -41,5 +41,12 @@ user2@skystar.com
 
 2. The script will prompt for your admin credentials.
 
+---
+
 ## **License**
 This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+
+---
+
+## **Contact**
+For questions or suggestions, refer to the [main README](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/README.md)

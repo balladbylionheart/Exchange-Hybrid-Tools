@@ -1,6 +1,6 @@
 # Microsoft Exchange Online PowerShell Script
 
-## Overview
+## **Overview**
 
 This PowerShell script streamlines common Exchange Online mailbox management tasks in a hybrid environment. It allows you to:
 
@@ -10,7 +10,7 @@ This PowerShell script streamlines common Exchange Online mailbox management tas
 
 **Note:** The domain and environment references (e.g., `@skystar.com` and any mention of "STAR") are examples only and should be replaced with your actual organizational domain and environment details.
 
-## Prerequisites
+## **Prerequisites**
 
 - **Exchange Management Shell**:  
   You must run this script from the **Exchange Management Shell** or a PowerShell session with the Exchange Online PowerShell module installed and connected to Exchange Online.  
@@ -25,7 +25,7 @@ This PowerShell script streamlines common Exchange Online mailbox management tas
 - **Administrative Permissions**:  
   Ensure that you have the necessary permissions to modify mailbox settings, grant permissions, and manage forwarding rules in both Active Directory and Exchange Online.
 
-## Running the Script
+## **Running the Script**
 
 1. **Open the Exchange Management Shell** (or a PowerShell session with the Exchange Online module connected).
    
@@ -48,7 +48,7 @@ This PowerShell script streamlines common Exchange Online mailbox management tas
    - Choose an action from the menu (1-6).
    - Provide the requested usernames and information as prompted.
 
-## Common Tasks
+## **Common Tasks**
 
 - **Grant Full Access**: Enter a user and a shared mailbox username to grant the user Full Access to the mailbox.
 - **SendAs Permissions**: Assign SendAs rights to allow a user to send emails as another mailbox.
@@ -67,10 +67,16 @@ This PowerShell script streamlines common Exchange Online mailbox management tas
 - **Confirmation and Screenshots**:  
   After completing tasks, the script may prompt you to review or take screenshots before exiting.
 
-## Disclaimer
+## **Disclaimer**
 
 This script is provided as-is. Test it in a non-production environment before using it in production. Always ensure you have proper backups and understand the implications of modifying user mailboxes and permissions in your Exchange Online and Active Directory environment.
 
-## License
+---
+
+## **License**
 This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
-```
+
+---
+
+## **Contact**
+For questions or suggestions, refer to the [main README](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/README.md)

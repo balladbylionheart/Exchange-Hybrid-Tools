@@ -160,4 +160,4 @@ Contributions are welcome. If you'd like to suggest changes, submit an issue or 
 
 ## **Contact**
 If you'd like to discuss my projects or have questions about the scripts, connect with me:  
-- [LinkedIn Profile](https://www.linkedin.com/in/helen-najar)  
+- [LinkedIn Profile](https://www.linkedin.com/in/helen-najar)
