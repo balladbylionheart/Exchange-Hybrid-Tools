@@ -2,7 +2,7 @@
 
 ## Overview
 
-This PowerShell script is designed to streamline the termination process for user accounts in a hybrid Active Directory (AD) and Exchange Online environment. It performs several key tasks:
+This PowerShell script is designed to simplify the termination process for user accounts in a hybrid Active Directory (AD) and Exchange Online environment. It performs several key tasks:
 
 - Validates the existence of the user in AD.
 - Resets the user’s password.

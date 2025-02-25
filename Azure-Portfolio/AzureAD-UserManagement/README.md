@@ -2,7 +2,7 @@
 
 🚧 **Work in Progress** 🚧  
 
-This section is actively being developed. Stay tuned for updates as new scripts, tools, and resources are added to streamline Azure AD user management tasks.
+This section is actively being developed. Stay tuned for updates as new scripts, tools, and resources are added to Azure AD user management tasks.
 
 ---
 

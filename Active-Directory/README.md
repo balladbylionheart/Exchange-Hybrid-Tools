@@ -1,6 +1,6 @@
 # PowerShell Scripts
 
-The **Active Directory** directory contains a collection of PowerShell scripts designed to streamline and automate key IT administrative tasks. This includes **Active Directory (AD) user management** and **O365 Hybrid management**.
+The **Active Directory** directory contains a collection of PowerShell scripts designed to automate key IT administrative tasks. This includes **Active Directory (AD) user management** and **O365 Hybrid management**.
 
 These scripts are written with a focus on:  
 - **Automation and Efficiency**: Reduce manual effort through automated workflows.  

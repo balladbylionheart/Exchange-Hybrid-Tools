@@ -1,6 +1,6 @@
 # Exchange Scripts
 
-This directory contains PowerShell scripts for **managing and migrating Exchange Online and On-Premises Exchange environments**. The scripts are designed to streamline administrative tasks, automate migrations, and improve operational efficiency.
+This directory contains PowerShell scripts for **managing and migrating Exchange Online and On-Premises Exchange environments**. The scripts are designed to simplify administrative tasks, automate migrations, and improve operational efficiency.
 
 ### **1️ ExchangeOnlineManagement Folder**
 This folder contains scripts focused on managing Exchange Online, including user permissions, mailbox access, and automated tasks to support daily administrative needs.

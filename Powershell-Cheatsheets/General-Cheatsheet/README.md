@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides a versatile collection of PowerShell commands designed to assist system administrators in efficiently managing Windows environments. It covers user management, Active Directory (AD) tasks, permissions handling, WMI queries, and system cleanup operations. These scripts and commands streamline administrative workflows and ensure consistent performance.
+This repository provides a versatile collection of PowerShell commands designed to assist system administrators in efficiently managing Windows environments. It covers user management, Active Directory (AD) tasks, permissions handling, WMI queries, and system cleanup operations. These scripts and commands simplify administrative workflows and ensure consistent performance.
 
 ## Features
 
