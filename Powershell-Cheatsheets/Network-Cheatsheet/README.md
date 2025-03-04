@@ -10,6 +10,21 @@ network connectivity, firewall settings, VPN access, and system diagnostics in W
 - Commands are grouped into categories for **quick access** to network and firewall tasks.  
 - Use the **search (CTRL + F)** to quickly find specific commands.  
 
+---
+## Quick Access  
+## 📌 Quick Access  
+Jump to a section quickly:  
+1️⃣ [Basic Network Information](#1-basic-network-information)  
+2️⃣ [DNS & IP Configuration](#2-dns--ip-configuration)  
+3️⃣ [Network Connectivity & Troubleshooting](#3-network-connectivity--troubleshooting)  
+4️⃣ [Network Reset & Adapter Troubleshooting](#4-network-reset--adapter-troubleshooting)  
+5️⃣ [Open Ports & Firewall Rules](#5-open-ports--firewall-rules)  
+6️⃣ [Advanced Diagnostics & Logs](#6-advanced-diagnostics--logs)  
+7️⃣ [VPN Troubleshooting & Configuration](#7-vpn-troubleshooting--configuration)  
+8️⃣ [Wireless Network & Wi-Fi Diagnostics](#8-wireless-network--wi-fi-diagnostics)  
+9️⃣ [Additional PowerShell Networking Tools](#9-additional-powershell-networking-tools)  
+---
+
 ## **Features**  
 
 ### **🔹 Network Management**  
