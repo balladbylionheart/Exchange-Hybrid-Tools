@@ -1,11 +1,14 @@
 # **PowerShell Cheat Sheet for Network and Firewall Management**  
 
-## **Overview**  
-This repository contains a **PowerShell script** for **network and firewall management**, designed for **IT administrators** to efficiently **monitor, troubleshoot, and configure** network connectivity and firewall settings in **Windows environments**.  
-
-It includes **advanced networking commands**, **port scanning**, **firewall rule management**, **VPN troubleshooting**, and **diagnostic tools**.  
-
+## **Overview**
+ **This is a PowerShell Cheat Sheet, NOT an executable script.** 
+It serves as a quick reference for IT administrators, network engineers, and PowerShell users troubleshooting  
+network connectivity, firewall settings, VPN access, and system diagnostics in Windows environments.
 ---
+## How to Use This Reference  
+- Copy and paste individual commands into **PowerShell** as needed.  
+- Commands are grouped into categories for **quick access** to network and firewall tasks.  
+- Use the **search (CTRL + F)** to quickly find specific commands.  
 
 ## **Features**  
 
@@ -41,9 +44,6 @@ It includes **advanced networking commands**, **port scanning**, **firewall rule
 
 ### **🔹 Prerequisites**  
 - **PowerShell Version**: Windows **PowerShell 5.0+** is recommended.  
-- **Execution Policy**: Ensure script execution is enabled by running:  
-  ```powershell
-  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
   ```  
 
 ---
