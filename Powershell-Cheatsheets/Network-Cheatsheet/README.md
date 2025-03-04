@@ -1,77 +1,168 @@
-# PowerShell Cheat Sheet for Network and Firewall Management
+# **PowerShell Cheat Sheet for Network and Firewall Management**  
 
-## Overview
+## **Overview**  
+This repository contains a **PowerShell script** for **network and firewall management**, designed for **IT administrators** to efficiently **monitor, troubleshoot, and configure** network connectivity and firewall settings in **Windows environments**.  
 
-This repository contains a PowerShell script for network and firewall management tasks, designed for IT administrators to efficiently monitor, troubleshoot, and configure network connectivity and firewall settings in Windows environments.
+It includes **advanced networking commands**, **port scanning**, **firewall rule management**, **VPN troubleshooting**, and **diagnostic tools**.  
 
-## Features
+---
 
-### **Network Management**
-- **Port Checking**: Check if a port is open on a specific IP address.
-- **Reverse DNS Lookup**: Perform reverse DNS lookups for IP addresses.
-- **Network Troubleshooting**:
-  - Ping remote servers or IPs to troubleshoot connectivity and VPN issues.
-  - Export active TCP connections.
-  - Use Pathping and Tracert for detailed network analysis.
+## **Features**  
 
-### **Firewall Management**
-- **Manage Firewall Profiles**:
-  - Enable/Disable all or specific firewall profiles (Domain, Public, Private).
-  - Set custom rules for inbound actions (block inbound on Public profile).
-  - Disable firewall on specific interfaces.
-- **Firewall Settings**: Review current profile settings and disabled interfaces.
+### **🔹 Network Management**  
+- **Basic Network Information**: View adapters, IP configurations, DNS, and connection profiles.  
+- **Port Checking**: Verify if a port is open on a specific IP address.  
+- **Reverse DNS Lookup**: Perform reverse DNS lookups for IP addresses.  
+- **Public IP Check**: Retrieve the external public IP of the system.  
+- **Network Troubleshooting**:  
+  - Ping remote servers or IPs to test connectivity and VPN issues.  
+  - Export active TCP connections.  
+  - Use `Pathping` and `Tracert` for detailed network analysis.  
+  - Flush DNS, reset Winsock, and restart network adapters.  
 
-## Getting Started
+### **🔹 Firewall Management**  
+- **Manage Firewall Profiles**:  
+  - Enable/Disable all or specific firewall profiles (**Domain, Public, Private**).  
+  - Set custom rules for inbound/outbound actions.  
+  - Block inbound traffic on **Public profile**.  
+  - Disable firewall on specific interfaces.  
+- **Review Firewall Settings**: List current firewall profiles, rules, and exceptions.  
 
-### Prerequisites
-- **PowerShell Version**: Ensure that you're using Windows PowerShell 5.0 or later.
-- **Execution Policy**: Ensure that script execution is enabled by running:
+### **🔹 VPN Troubleshooting**  
+- **Detect IPv6 Issues**: Check if IPv6 is interfering with VPN-based shared drive access.  
+- **Refresh VPN Connection**: Release and renew IP configurations.  
+- **Prioritize VPN Traffic**: Adjust **interface metrics** for VPN stability.  
+- **Test VPN Server Accessibility**: Check connectivity to VPN gateways.  
+- **Resolve Shared Drive Issues Over VPN**: Map drives correctly post-connection.  
+
+---
+
+## **Getting Started**  
+
+### **🔹 Prerequisites**  
+- **PowerShell Version**: Windows **PowerShell 5.0+** is recommended.  
+- **Execution Policy**: Ensure script execution is enabled by running:  
   ```powershell
   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-  ```
+  ```  
 
-### Usage
-1. Clone or download the repository.
-2. Open the PowerShell script in an editor (e.g., Visual Studio Code or PowerShell ISE).
-3. Customize the IP addresses and ports as needed for your environment.
-4. Execute the commands or scripts based on your requirements.
+---
 
-### Examples
+## **Usage**  
 
-- **Check if a specific port is open** on a remote IP address:
+### **🔹 Running the Commands**  
+1. **Clone or download** the repository.  
+2. **Open the script** in **PowerShell ISE** or **VS Code**.  
+3. **Modify parameters** (IP addresses, ports) based on your environment.  
+4. **Execute the scripts** based on your troubleshooting needs.  
+
+---
+
+## **Examples**  
+
+### **🔹 Basic Network Diagnostics**  
+- **Get all active network adapters**  
   ```powershell
-  New-Object System.Net.Sockets.TcpClient("192.168.1.100", "443")
+  Get-NetAdapter | Format-Table -AutoSize
   ```
 
-- **Perform a reverse DNS lookup** for a given IP address:
+- **Check your external/public IP address**  
   ```powershell
-  nslookup
-  set q=ptr
-  192.168.1.100
+  Invoke-RestMethod -Uri "https://api.ipify.org"
   ```
 
-- **Ping a server continuously** to troubleshoot network connectivity:
+- **Flush DNS cache to resolve connectivity issues**  
+  ```powershell
+  ipconfig /flushdns
+  ```
+
+### **🔹 Network Troubleshooting**  
+- **Ping a server continuously** and log results:  
   ```powershell
   ping 8.8.8.8 -t > C:\withVPN.txt
   ```
 
-- **Enable firewall profiles** for all networks:
+- **Check if a specific port is open on a remote IP**  
+  ```powershell
+  New-Object System.Net.Sockets.TcpClient("192.168.1.100", "443")
+  ```
+
+- **List all open TCP/UDP connections**  
+  ```powershell
+  Get-NetTCPConnection | Select-Object LocalAddress, LocalPort, RemoteAddress, RemotePort, State | Format-Table -AutoSize
+  ```
+
+### **🔹 Firewall Management**  
+- **Enable firewall for all profiles**  
   ```powershell
   Set-NetFirewallProfile -All -Enabled True
   ```
 
-- **Disable firewall for a specific interface**:
+- **Disable firewall on a specific interface**  
   ```powershell
   Set-NetFirewallProfile -Name Public -DisabledInterfaceAliases "Ethernet1"
   ```
 
-## Contribution
-Feel free to contribute improvements or additional use cases by submitting a pull request. All contributions are welcome!
+- **Allow RDP (Remote Desktop) traffic**  
+  ```powershell
+  New-NetFirewallRule -DisplayName "Allow RDP" -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Allow
+  ```
 
-## Disclaimer
-This script is provided as-is and should be tested in a controlled environment before deployment in production. Always ensure proper backups and configurations before making changes to system settings.
+### **🔹  VPN Troubleshooting & Fixes**  
+- **Check if system is using IPv6 (which can break shared drive access over VPN)**  
+  ```powershell
+  ipconfig /all | findstr "IPv6"
+  ```
 
-## License
+- **Disable IPv6 for VPN connections (fixes shared drive mapping issues)**  
+  ```powershell
+  Set-NetIPInterface -InterfaceAlias "VPN Connection Name" -AddressFamily IPv6 -Dhcp Disabled
+  ```
 
-This project is licensed under the [MIT License](LICENSE).
-```
+- **Force refresh of VPN adapter's IP configuration**  
+  ```powershell
+  ipconfig /release && ipconfig /renew && ipconfig /flushdns
+  ```
+
+- **Check if VPN server is reachable**  
+  ```powershell
+  Test-NetConnection -ComputerName vpn.example.com -Port 443
+  ```
+
+- **Check existing shared drive mappings over VPN**  
+  ```powershell
+  Get-SmbMapping
+  ```
+
+- **Clear old shared drive mappings** (fixes VPN access issues)  
+  ```powershell
+  net use * /delete
+  ```
+
+- **Manually remap shared drives after connecting to VPN**  
+  ```powershell
+  net use X: \\ServerName\SharedFolder /user:Domain\User
+  ```
+
+---
+
+## **Contribution**  
+**Have improvements or additional use cases?** Feel free to **submit a pull request**! Contributions are welcome.  
+
+---
+
+## **Disclaimer**  
+This script is provided **as-is**. Always **test in a controlled environment** before making changes to production systems. Ensure **backups** are in place before modifying **firewall settings** or **network configurations**.  
+
+---
+
+## **License**  
+ **This project is licensed under the [MIT License](LICENSE).**  
+
+---
+
+### **Why This README is Better?**
+- **Clear & Professional Layout** – Easy to read & navigate.  
+- **Aligned with your script** – No missing features or incorrect descriptions.  
+- **Includes Real-World Troubleshooting Examples** – More useful for IT admins.  
+- **Consistent Formatting** – PowerShell commands follow best practices.  

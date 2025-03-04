@@ -37,7 +37,7 @@ Get-NetTCPConnection | Sort-Object State -Descending | Format-Table -AutoSize
 # General Network Reset (Use if multiple fixes fail)
 netsh int ip reset                     # Reset TCP/IP stack  
 netsh winsock reset                     # Reset Winsock catalog  
-ipconfig /release && ipconfig /renew && ipconfig /flushdns  
+ipconfig /release; ipconfig /renew; ipconfig /flushdns  
 Restart-NetAdapter -Name "Ethernet" -Confirm:$false  
 
 # List open ports and active connections
@@ -88,7 +88,7 @@ Test-NetConnection -ComputerName vpn.example.com -Port 443
 Get-NetIPConfiguration | Select-Object InterfaceAlias, InterfaceIndex, Dhcp
 
 # Force refresh of the VPN adapter’s IP configuration
-ipconfig /release && ipconfig /renew && ipconfig /flushdns
+ipconfig /release; ipconfig /renew; ipconfig /flushdns
 
 # Common VPN Fixes for Shared Drive Access Issues
 Set-NetIPInterface -InterfaceAlias "VPN Connection Name" -AddressFamily IPv6 -Dhcp Disabled  
