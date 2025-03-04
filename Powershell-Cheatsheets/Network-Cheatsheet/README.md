@@ -16,12 +16,12 @@ Jump to a section in the script:
 1️⃣ [Basic Network Information](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L5)  
 2️⃣ [DNS & IP Configuration](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L15)  
 3️⃣ [Network Connectivity & Troubleshooting](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L25)  
-4️⃣ [Network Reset & Adapter Troubleshooting](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#34)  
-5️⃣ [Open Ports & Firewall Rules](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#44)  
-6️⃣ [Advanced Diagnostics & Logs](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#56)  
-7️⃣ [VPN Troubleshooting & Configuration](#https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#64)  
-8️⃣ [Wireless Network & Wi-Fi Diagnostics](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#82)  
-9️⃣ [Additional PowerShell Networking Tools](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#88)  
+4️⃣ [Network Reset & Adapter Troubleshooting](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L34)  
+5️⃣ [Open Ports & Firewall Rules](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L44)  
+6️⃣ [Advanced Diagnostics & Logs](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L56)  
+7️⃣ [VPN Troubleshooting & Configuration](#https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L64)  
+8️⃣ [Wireless Network & Wi-Fi Diagnostics](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L82)  
+9️⃣ [Additional PowerShell Networking Tools](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/Powershell-Cheatsheets/Network-Cheatsheet/NetworkCheatsheet.ps1#L88)  
 ---
 
 ## **Features**  
@@ -57,8 +57,7 @@ Jump to a section in the script:
 ## **Getting Started**  
 
 ### **🔹 Prerequisites**  
-- **PowerShell Version**: Windows **PowerShell 5.0+** is recommended.  
-  ```  
+- **PowerShell Version**: Windows **PowerShell 5.0+** is recommended.
 
 ---
 
