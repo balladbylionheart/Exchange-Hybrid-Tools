@@ -14,23 +14,30 @@ Write-Host "            SkyStar Environment Script Launched        "  -Foregroun
 Write-Host "========================================================"  -ForegroundColor Yellow
 Write-Host " "
 
-# Gather LAN ID
-$username = Read-Host "Enter User's username"
+do {
+    # Prompt for the username
+    $username = Read-Host "Enter user's username"
+    
+    # Check if the input is null, empty, or only whitespace
+    if ([string]::IsNullOrWhiteSpace($username)) {
+        Write-Host "Username cannot be empty. Please try again." -ForegroundColor Red
+        continue
+    }
+    
+    # Validate against invalid characters
+    if ($username -match '[$!~#%&*{}\\:<>?/|+"@_]') {
+        Write-Host "Invalid characters detected. Please enter a valid username." -ForegroundColor Red
+        continue
+    }
+    
+    # Attempt to retrieve the user from Active Directory
+    $user = Get-ADUser -Filter { SamAccountName -eq $username } -Properties SamAccountName, UserPrincipalName
 
-# Validate username input
-while ($username -match '[$!~#%&*{}\\:<>?/|+"@_]' -or $username.Length -eq 0 -or $username -eq ' ') {
-    $username = Read-Host -Prompt "Invalid characters detected. Please enter a valid LAN ID"
-}
-
-$udoesExist = Get-ADUser -Filter { SamAccountName -eq $username } -Properties SamAccountName | Select-Object SamAccountName
-$udoesExist1 = $udoesExist.SamAccountName
-
-while (-not $udoesExist1) {
-    Write-Host "The username provided was not found. Please enter a valid username:" -ForegroundColor Red -NoNewline
-    $username = Read-Host -Prompt " "
-    $udoesExist = Get-ADUser -Filter { SamAccountName -eq $username } -Properties SamAccountName | Select-Object SamAccountName
-    $udoesExist1 = $udoesExist.SamAccountName
-}
+    if (-not $user) {
+        Write-Host "The username provided was not found. Please try again." -ForegroundColor Red
+    }
+    
+} until ($user)
 
 $date = Get-Date -DisplayHint Date
 
@@ -67,63 +74,63 @@ function Generate-Password([int32]$PasswordLength = 22) {
 }
 
 Write-Host " "
-Get-ADPrincipalGroupMembership $username | Select Name
+Get-ADPrincipalGroupMembership $user.SamAccountName | Select Name
 Write-Host "Gathering MemberOf..."
 Write-Host "MemberOf will display again once the script is completed."
 Write-Host " "
 Write-Host "Ensuring 'Domain Users' is the Primary AD Group..."
 $group = Get-ADGroup "Domain Users" -Properties @("primaryGroupToken")
-Get-ADUser $username | Set-ADUser -replace @{primaryGroupID=$group.primaryGroupToken}
+Get-ADUser $user.SamAccountName | Set-ADUser -replace @{primaryGroupID=$group.primaryGroupToken}
 Write-Host "'Domain Users' set as the Primary Group - COMPLETED"
 
 $passW = Generate-Password
 Write-Host " "
 Write-Host "Setting New Password..."
-Set-ADAccountPassword -Identity $username -Reset -NewPassword (ConvertTo-SecureString -AsPlainText $passW -Force)
+Set-ADAccountPassword -Identity $user.SamAccountName -Reset -NewPassword (ConvertTo-SecureString -AsPlainText $passW -Force)
 Write-Host "New Password Set - COMPLETED"
 
 Write-Host " "
 Write-Host "Converting to Shared Mailbox on Hybrid..."
-Set-RemoteMailbox "$username@skystar.com" -Type Shared
+Set-RemoteMailbox $user.UserPrincipalName -Type Shared
 Write-Host "Converted to Shared Mailbox on Hybrid - COMPLETED"
 
 Write-Host " "
 Write-Host "Hiding From Address Lists..."
-Set-RemoteMailbox -Identity "$username@skystar.com" -HiddenFromAddressListsEnabled $true
+Set-RemoteMailbox -Identity $user.UserPrincipalName -HiddenFromAddressListsEnabled $true
 Write-Host "Hidden from Address Lists - COMPLETED"
 
 Write-Host " "
 Write-Host "Syncing to O365..."
 Connect-ExchangeOnline
-Set-Mailbox "$username@skystar.com" -Type Shared
+Set-Mailbox $user.UserPrincipalName -Type Shared
 Write-Host "Syncing to O365 - COMPLETED"
 
 Write-Host " "
 Write-Host "Clearing Calendar Events..."
-$Email = "$username@skystar.com"
+$Email = $user.UserPrincipalName
 Remove-CalendarEvents -Identity $Email -CancelOrganizedMeetings -QueryWindowInDays 120
 Write-Host "Calendar Events Cleared for $Email - COMPLETED" -ForegroundColor Cyan
 
 Write-Host " "
 Write-Host "Removing Group Memberships..."
-Get-ADUser -Identity $username -Properties MemberOf | ForEach-Object { $_.MemberOf | Remove-ADGroupMember -Members $_ -Confirm:$false }
+Get-ADUser -Identity $user.SamAccountName -Properties MemberOf | ForEach-Object { $_.MemberOf | Remove-ADGroupMember -Members $_ -Confirm:$false }
 Write-Host "Group Memberships Removed - COMPLETED (Ignore any primary group error)"
 
 Write-Host " "
 Write-Host "Updating Description Field..."
-$CurrentDesc = (Get-ADUser -Identity $username -Properties Description).Description
+$CurrentDesc = (Get-ADUser -Identity $user.SamAccountName -Properties Description).Description
 $UpdatedDesc = "$FullDesc - $CurrentDesc"
-Set-ADUser -Identity $username -Description $UpdatedDesc
+Set-ADUser -Identity $user.SamAccountName -Description $UpdatedDesc
 Write-Host "Description Field Updated - COMPLETED"
 
 Write-Host " "
 Write-Host "Disabling Account..."
-Set-ADUser -Identity $username -Enabled $false
+Set-ADUser -Identity $user.SamAccountName -Enabled $false
 Write-Host "Account Disabled - COMPLETED"
 
 Write-Host " "
 Write-Host "Moving account to Disabled Mailbox Sync OU..."
-Get-ADUser $username | Move-ADObject -TargetPath 'OU=Disabled Sync,OU=Disabled Objects,DC=skystar,DC=com'
+Get-ADUser $user.SamAccountName | Move-ADObject -TargetPath 'OU=Disabled Sync,OU=Disabled Objects,DC=skystar,DC=com'
 Write-Host "Moved to Disabled Mailbox Sync OU - COMPLETED"
 Write-Host " "
 
