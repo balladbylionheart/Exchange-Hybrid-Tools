@@ -1,85 +1,114 @@
-# Active Directory Termination Script
+Here’s the refined **README** without emojis, keeping it professional and clear:
 
-## Overview
+---
 
-This PowerShell script is designed to simplify the termination process for user accounts in a hybrid Active Directory (AD) and Exchange Online environment. It performs several key tasks:
+# **Active Directory Termination Script**
 
-- Validates the existence of the user in AD.
+## **Overview**
+
+This PowerShell script simplifies the termination process for user accounts in a hybrid Active Directory (AD) and Exchange Online environment.
+
+### **Key Functions:**
+- Validates user existence in AD.
 - Resets the user’s password.
 - Converts the mailbox to a shared mailbox and hides it from address lists.
 - Clears calendar events organized by the user.
-- Removes the user from all AD groups (except the primary group).
-- Updates the user’s AD description field with termination details.
-- Disables the user’s AD account.
-- Moves the account to a designated “Disabled” Organizational Unit (OU).
+- Removes all AD group memberships (except the primary group).
+- Updates the user’s AD description with termination details.
+- Disables the AD account and moves it to a designated “Disabled” Organizational Unit (OU).
 - Prompts for and validates a ticket number (e.g., `REQ1234567`) to document the action.
 
-**Note:** The domain and paths (like `skystar.com`, `Disabled Sync` OU) are placeholders and should be replaced with the correct values for your organization.
+---
 
-## Prerequisites
+## ⚠️ **Customization Required**
+**Important:**  
+The following placeholders **must be updated** for your environment:  
 
-- **Active Directory Module:**  
-  Ensure the Active Directory module is installed and imported:
-  ```powershell
-  Import-Module ActiveDirectory
-  ```
+- `skystar.com` → **Replace with your organization's email domain.**  
+- `Disabled Sync, OU=Disabled Objects` → **Update to match your actual AD structure.**  
 
-- **Exchange Online Connectivity:**  
-  You must have the Exchange Online PowerShell module installed and be connected:
-  ```powershell
-  Connect-ExchangeOnline
-  ```
+📌 **If these are not updated, the script may not work correctly!**  
 
-  Running this script in an Exchange-enabled PowerShell session ensures mailbox-related commands work properly.
+---
 
-- **Permissions:**  
-  You will need appropriate administrative permissions in both AD and Exchange Online environments to modify user accounts, convert mailboxes, and remove group memberships.
+## **Prerequisites**
 
-## Usage
+### **Active Directory Module**
+Ensure the Active Directory module is installed and imported:
+```powershell
+Import-Module ActiveDirectory
+```
 
-1. **Open a PowerShell Session:**  
-   Ideally, use the Exchange Management Shell or a PowerShell session with the Exchange Online module loaded and connected.
+### **Exchange Online Connectivity**
+You must have the Exchange Online PowerShell module installed and be connected:
+```powershell
+Connect-ExchangeOnline
+```
+This is required for mailbox-related commands to function correctly.
 
-2. **Navigate to the Script Location:**
-   ```powershell
-   cd C:\Path\To\Your\Script\
-   ```
+### **Administrative Permissions**
+Ensure you have sufficient admin privileges in:
+- Active Directory (for disabling accounts and modifying attributes).
+- Exchange Online (for converting mailboxes and clearing calendar events).
 
-3. **Execution Policy (if needed):**
-   ```powershell
-   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
+---
 
-4. **Run the Script:**
-   ```powershell
-   .\AD-O365Hybrid-Termination.ps1
-   ```
+## **Usage**
 
-5. **Follow the Prompts:**
-   - Enter the username (LAN ID) of the user being terminated.
-   - Enter a valid ticket number (e.g., `REQ1234567`).
-   - The script will perform the termination actions and prompt you at the end to confirm if you have taken all necessary screenshots.
+### **1. Open a PowerShell Session**
+Use Exchange Management Shell or a PowerShell session with the Exchange Online module loaded.
 
-## Notes
+### **2. Navigate to the Script Location**
+```powershell
+cd C:\Path\To\Your\Script\
+```
 
-- **Ticket Number Format:**
-  The script requires a `REQ` prefix followed by 7 digits (total length = 10 characters). Example: `REQ1234567`.
+### **3. (If Needed) Adjust Execution Policy**
+First-time users may need to allow script execution:
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+**Warning:** Changing Execution Policy allows unsigned scripts to run—ensure scripts are from a trusted source.
 
-- **Username Validation:**
-  The script ensures the provided username exists in AD and does not contain invalid characters.
+### **4. Run the Script**
+```powershell
+.\AD-O365Hybrid-Termination.ps1
+```
 
-- **Hidden Shared Mailbox:**
-  After termination, the user’s mailbox is converted to a shared mailbox and hidden from the address lists to prevent accidental use.
+### **5. Follow the Prompts**
+- Enter the username (LAN ID) of the user being terminated.
+- Enter a valid ticket number (e.g., `REQ1234567`).
+- The script will process the termination and prompt you to confirm screenshots at the end.
 
-- **Removing Groups:**
-  The script removes all group memberships (except the primary group), ensuring the terminated user no longer has access to resources.
+---
 
-- **Error Handling:**
-  If invalid input is provided (e.g., username not found, incorrect ticket format), the script will prompt you to re-enter until valid input is provided.
+## **Additional Notes**
 
-## Disclaimer
+### **Ticket Number Format**
+The script enforces a 10-character ticket format:
+- Must start with `REQ`
+- Followed by 7 numeric digits (e.g., `REQ1234567`).
 
-This script is provided as-is. Test it thoroughly in a non-production environment before using it in production. Always ensure you have the necessary backups and understand the implications of modifying user accounts and mailboxes in your domain and Exchange Online environment.
+### **Username Validation**
+Ensures the provided username exists in AD and does not contain invalid characters.
 
-## License
+### **Hidden Shared Mailbox**
+Converts the mailbox to Shared and hides it from address lists after termination.
+
+### **Removing Group Memberships**
+Removes all group memberships except the primary group to revoke access.
+
+### **Error Handling**
+If invalid input is provided (e.g., username not found, incorrect ticket format), the script will prompt until valid input is entered.
+
+---
+
+## **Disclaimer**
+This script is provided as-is.  
+Always test in a non-production environment before applying to live accounts.  
+Ensure you have backups and understand the implications of modifying user accounts and mailboxes.
+
+---
+
+## **License**
 This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
