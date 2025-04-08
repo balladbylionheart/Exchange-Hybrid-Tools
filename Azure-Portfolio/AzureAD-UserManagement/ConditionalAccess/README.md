@@ -73,11 +73,11 @@ This script was tested in simulation mode due to lack of Azure access. It is exp
 
 ---
 ## License
-This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).
 
 ---
 
 ## Contact
 If you have questions or suggestions, feel free to reach out:
-- [GitHub Profile](https://github.com/Abyloon)
+- [GitHub Profile](https://github.com/balladbydragons)
 - [LinkedIn Profile](https://www.linkedin.com/in/helen-najar)

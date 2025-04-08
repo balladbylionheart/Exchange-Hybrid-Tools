@@ -65,7 +65,7 @@ This directory handles the **termination of user accounts** in AD. This includes
 ## **How to Use**
 1. **Clone the Repository**:  
    ```bash
-   git clone https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools.git
+   git clone https://github.com/balladbydragons/O365-Automation-and-AD-Management-Tools.git
    cd O365-Automation-and-AD-Management-Tools/Active-Directory
    ```
 

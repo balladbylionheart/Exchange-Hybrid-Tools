@@ -38,4 +38,4 @@ Example:
 This script is provided as-is. Test it thoroughly in a non-production environment before using it in production. Always ensure you have the necessary backups and understand the implications of modifying user accounts and mailboxes in your domain and Exchange Online environment.
 
 ## License
-This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).

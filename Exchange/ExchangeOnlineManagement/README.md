@@ -74,9 +74,9 @@ This script is provided as-is. Test it in a non-production environment before us
 ---
 
 ## **License**
-This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).
 
 ---
 
 ## **Contact**
-For questions or suggestions, refer to the [main README](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/README.md)
+For questions or suggestions, refer to the [main README](https://github.com/balladbydragons/O365-Automation-and-AD-Management-Tools/blob/main/README.md)

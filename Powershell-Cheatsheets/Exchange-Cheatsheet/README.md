@@ -31,4 +31,4 @@ This repository contains a collection of PowerShell commands for managing Office
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).

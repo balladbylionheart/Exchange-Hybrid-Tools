@@ -89,5 +89,5 @@
 This script is provided as-is. Test it in a non-production environment first. Always ensure you have proper backups and understand the implications of creating users and mailboxes in your domain and Exchange organization.
 
 ## License
-This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).
 ```

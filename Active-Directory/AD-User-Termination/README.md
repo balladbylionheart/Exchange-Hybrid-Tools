@@ -111,4 +111,4 @@ Ensure you have backups and understand the implications of modifying user accoun
 ---
 
 ## **License**
-This project is licensed under the [MIT License](https://github.com/Abyloon/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).

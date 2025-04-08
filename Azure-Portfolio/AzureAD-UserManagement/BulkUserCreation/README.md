@@ -100,4 +100,4 @@ If you have questions or suggestions for improving this tool, feel free to reach
 ---
 
 ## **License**
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/Abyloon/O365-Automation-and-AD-Management-Tools/blob/main/LICENSE.md) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/balladbydragons/O365-Automation-and-AD-Management-Tools/blob/main/LICENSE.md) file for details.
