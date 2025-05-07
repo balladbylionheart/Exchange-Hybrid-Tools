@@ -1,100 +1,115 @@
-# AD-ExchangeHybrid-UserCreation.ps1
+# **AD O365 Hybrid User Creation**
+
 By Helen Najar, Lionheart | Ballad by Dragons
 
-## Overview
+## **Overview**
 
-`AD-ExchangeHybrid-UserCreation.ps1` is a PowerShell script designed for environments that integrate on-premises Active Directory (AD) with a hybrid Exchange/Office 365 setup. It allows administrators to create new AD user accounts (employees or contractors), enable their remote mailboxes in Office 365, and manage shared mailboxes and distribution groups.
+`AD-O365Hybrid-UserCreation.ps1` is a PowerShell script forged for hybrid environments—where on-prem Active Directory meets the cloud realm of Exchange Online.
+It enables the streamlined creation of new user accounts, remote mailboxes, shared inboxes, and distribution groups—crafted with clarity and built for scale.
 
-**Note:** The domain and environment references (e.g., "skystar.com" and "STAR") are examples only and should be replaced or adjusted to fit your actual infrastructure and naming conventions.
+**Note:** All sample domain references (`skystar.com`, `STAR`, etc.) are placeholders. Update them to match your real-world environment before using.
 
-## Key Features
+---
 
-- **AD User Creation**:  
-  Create new Active Directory user accounts for full-time employees or contractors.
-  
-- **Hybrid Exchange Integration**:  
-  Automatically enable remote mailboxes, integrating with Office 365.
+## **Key Features**
 
-- **Automated Group Membership**:  
-  Copy group memberships from template accounts, ensuring correct permissions by default.
+* **🧍 AD User Creation** – For both employees and contractors.
+* **☁️ Hybrid Mailbox Enablement** – Seamlessly integrates users with Exchange Online.
+* **👥 Template-Based Group Assignment** – Copies memberships from pre-defined templates.
+* **📫 Shared Mailbox Creation** – With ticket validation and address book hiding.
+* **📣 Distribution Group Creation** – With automated setup and ownership assignment.
 
-- **Shared Mailbox Creation**:  
-  Easily create new shared mailboxes.
+---
 
-- **Distribution Group Management**:  
-  Create and configure distribution groups, including adding members and setting ownership.
+## **Prerequisites**
 
-## Prerequisites
+* **Environment**: Run this script inside the **Exchange Management Shell** on a hybrid-configured server.
+* **Modules**: PowerShell 5.1+, Active Directory module, and Exchange Management tools.
+* **Permissions**: Ensure you have admin rights for AD and Exchange.
+* **Customization**: Replace all placeholder domains, template accounts, and OU paths as needed.
 
-- **Environment**:  
-  The script must be run from the **Exchange Management Shell** in your hybrid environment to ensure all required cmdlets and permissions are available.
-  
-- **PowerShell & Modules**:  
-  Windows PowerShell 5.1 or later recommended.  
-  Active Directory module and Exchange management tools must be available in the Exchange Management Shell.
+---
 
-- **Permissions**:  
-  Appropriate administrative permissions in Active Directory and Exchange are required for user, mailbox, and group creation.
+## **Usage**
 
-- **Domain Configuration**:  
-  Update the script to reflect your actual domain, OU paths, and template accounts. The provided "STAR" and "skystar.com" domain values are placeholders.
+1. **Launch the Exchange Management Shell as Administrator**
 
-## Usage
+2. **Navigate to the Script Directory**
 
-1. **Open the Exchange Management Shell as Administrator**:  
-   Run the Exchange Management Shell with elevated privileges.
-
-2. **Navigate to the Script Location**:  
-   Use `cd` to navigate to the directory where you downloaded `AD-ExchangeHybrid-UserCreation.ps1`. For example:  
    ```powershell
-   cd C:\Scripts\
+   cd C:\Path\To\Your\Script\
    ```
 
-3. **Set Execution Policy** (if not already):  
+3. **Set Execution Policy (if needed)**
+
    ```powershell
    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
 
-4. **Run the Script**:  
+4. **Run the Script**
+
    ```powershell
-   .\AD-ExchangeHybrid-UserCreation.ps1
+   .\AD-O365Hybrid-UserCreation.ps1
    ```
 
-5. **Follow On-Screen Prompts**:  
-   Choose the option you need (e.g., create a Star Employee, Contractor, Shared Mailbox, or Distribution Group) and provide the requested details (First Name, Last Name, Manager’s Username, Department, etc.).
+5. **Follow the Prompts**
+   Select your task:
 
-6. **Confirmation and Screenshots**:  
-   The script will display user and mailbox details at the end. Take any required screenshots before exiting.
+   * Create Star Employee
+   * Contractor Account
+   * Shared Mailbox
+   * Distribution Group
+     Then enter user details, manager name, department, and a REQ ticket if required.
 
-## Example Workflows
+6. **Confirm and Capture Screenshots**
+   The script will display final results—ready for audit or documentation.
 
-- **Create a Star Employee**:  
-  Select option `1` and enter the requested information. The script will create the AD user, assign group memberships, enable the remote mailbox, and place the user in the correct O365 group.
+---
 
-- **Create a Shared Mailbox**:  
-  Select option `3` and enter the requested information, including a **REQ** ticket number (e.g., `REQ1234567`) for documentation. The script will create the shared mailbox and update AD attributes accordingly.
+## **Example Workflows**
 
-## Notes
+### ✨ Create a Star Employee
 
-- **Ticket Numbers**:  
-  The script uses `REQ` followed by 7 digits (e.g., `REQ1234567`) to validate ticket numbers for certain tasks (like shared mailbox creation or distribution groups).
+Option `1`: Prompts for user details and automatically:
 
-- **Username Conflicts**:  
-  If the generated username already exists, you’ll be prompted to append a number (0-9) to create a unique username, and asked whether to proceed.
+* Creates the AD user
+* Enables remote mailbox
+* Assigns default groups
+* Sets a description with the REQ ticket
 
-- **Template Accounts & Groups**:  
-  The script references template accounts (like `!STAR_Employee`, `!STAR_Contractor`) and groups (like `O365 E3 Group`). Ensure these accounts and groups exist and match your organizational standards.
+### 📨 Create a Shared Mailbox
 
-## Disclaimer
+Option `3`: Requests REQ number and mailbox name, then:
 
-This script is provided as-is. Test it in a non-production environment first. Always ensure you have proper backups and understand the implications of creating users and mailboxes in your domain and Exchange organization.
+* Creates the shared mailbox
+* Hides it from address lists
+* Tags the AD description for tracking
+
+---
+
+## **Notes & Validation**
+
+* **🎟 Ticket Format**: Must be in the format `REQ1234567`.
+* **🆔 Username Conflicts**: If a username exists, the script prompts to append a digit and continue.
+* **📂 Templates**: Ensure template users (`!STAR_Employee`, etc.) and O365 groups exist in your AD.
+
+---
+
+## **Disclaimer**
+
+This script is provided as-is. Always test in a development or lab environment before using in production.
+Proper backups, naming policies, and organizational approval are strongly recommended.
+
+---
 
 ## **License**
-This project is licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
+
+Licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md)
 
 Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
 
 ---
 
 ## **Contact**
-For questions or suggestions, refer to the [main README](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/README.md)
+For questions, enhancements, or feedback:
+📬 [Main README](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/README.md)
