@@ -1,8 +1,5 @@
-Here’s the refined **README** without emojis, keeping it professional and clear:
-
----
-
 # **Active Directory Termination Script**
+By Helen Najar, Lionheart | Ballad by Dragons
 
 ## **Overview**
 
@@ -111,4 +108,11 @@ Ensure you have backups and understand the implications of modifying user accoun
 ---
 
 ## **License**
-This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
+
+Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
+
+---
+
+## **Contact**
+For questions or suggestions, refer to the [main README](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/README.md)

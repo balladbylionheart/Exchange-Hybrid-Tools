@@ -1,4 +1,5 @@
 # AD-ExchangeHybrid-UserCreation.ps1
+By Helen Najar, Lionheart | Ballad by Dragons
 
 ## Overview
 
@@ -88,6 +89,12 @@
 
 This script is provided as-is. Test it in a non-production environment first. Always ensure you have proper backups and understand the implications of creating users and mailboxes in your domain and Exchange organization.
 
-## License
-This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).
-```
+## **License**
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
+
+Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
+
+---
+
+## **Contact**
+For questions or suggestions, refer to the [main README](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/README.md)

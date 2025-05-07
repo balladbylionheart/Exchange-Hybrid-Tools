@@ -1,4 +1,0 @@
-PolicyName,State,AssignedUsers,AssignedGroups,Conditions
-Require MFA for All Users,Enabled,alex.doe@domain.com,HR, Office 365 Apps
-Block Legacy Authentication,Enabled,,All Users,
-Allow Admin Access Only,Disabled,jack.smith@domain.com,IT,Microsoft Azure Management

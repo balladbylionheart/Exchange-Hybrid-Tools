@@ -1,4 +1,5 @@
 # Migration Logs Directory
+By Helen Najar, Lionheart | Ballad by Dragons
 
 ## **Purpose**
 The `migration-logs` folder is used to store log files generated during the execution of the **Hybrid Exchange to Office 365 Migration** process. These logs serve as a record of the migration status, errors, warnings, and other important messages that are useful for troubleshooting and auditing purposes.
@@ -66,3 +67,14 @@ log_20241218_154532.txt
   Get-Content .\migration-logs\log_20241218_154532.txt
   ```
 - **Text Editor**: Open the log file with any text editor (like VS Code, Notepad++, etc.).
+
+
+## **License**
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
+
+Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
+
+---
+
+## **Contact**
+For questions or suggestions, refer to the [main README](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/README.md)

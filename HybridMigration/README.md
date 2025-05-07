@@ -1,4 +1,5 @@
 # Hybrid Exchange to Office 365 Migration Script
+By Helen Najar, Lionheart | Ballad by Dragons
 
 ## **Description**
 This PowerShell script automates the migration of on-premises Exchange mailboxes to Office 365 using the hybrid migration approach.
@@ -44,9 +45,11 @@ user2@skystar.com
 ---
 
 ## **License**
-This project is licensed under the [MIT License](https://github.com/balladbydragons/Powershell-Scripts/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
+
+Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
 
 ---
 
 ## **Contact**
-For questions or suggestions, refer to the [main README](https://github.com/balladbydragons/O365-Automation-and-AD-Management-Tools/blob/main/README.md)
+For questions or suggestions, refer to the [main README](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/README.md)

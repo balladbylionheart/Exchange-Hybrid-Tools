@@ -1,3 +1,7 @@
+<#
+    Creation by By Helen Najar, Lionheart | Ballad by Dragons
+#>
+
 # ============================================
 # Office 365 Hybrid Migration Automation Script
 # ============================================
