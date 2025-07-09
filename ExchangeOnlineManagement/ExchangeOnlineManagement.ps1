@@ -1,5 +1,5 @@
 <#
-    Creation by By Helen Najar, Lionheart | Ballad by Dragons
+    Creation by By Helen Najar, Lionheart | Ballad by Lionheart
 #>
 
 # Import the Active Directory module

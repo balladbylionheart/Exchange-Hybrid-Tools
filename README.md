@@ -1,5 +1,5 @@
 # Exchange Hybrid Tools  
-By Helen Najar, Lionheart | Ballad by Dragons
+By Helen Najar, Lionheart | Ballad by Lionheart
 
 This repository contains PowerShell scripts tailored for managing **hybrid Exchange environments**—including onboarding, offboarding, Exchange Online permissions, and full mailbox migrations. These tools reflect real-world enterprise use and streamline both daily admin tasks and complex migration workflows.
 
@@ -87,16 +87,16 @@ Install-Module MSOnline
 
 ## 📜 License
 
-This project is licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbylionheart/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
 
-Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
+Created and maintained by Helen Najar | Lionheart | [balladbylionheart.com](https://www.balladbylionheart.com)
 
 ## 📬 Contact
 
 For inquiries, feedback, or collaboration opportunities:
 
 - **LinkedIn**: [Helen Najar](https://www.linkedin.com/in/helen-najar)  
-- **Website**: [BalladByDragons.org/contact](https://www.balladbydragons.org/contact)  
-- **GitHub**: [@balladbydragons](https://github.com/balladbydragons)  
+- **Website**: [balladbylionheart.com/contact](https://www.balladbylionheart.com/contact)  
+- **GitHub**: [@balladbylionheart](https://github.com/balladbylionheart)  
 
 Whether you're a fellow IT specialist, a seeker of poetic code, or someone in need of Exchange or automation solutions—I'm open to connect.

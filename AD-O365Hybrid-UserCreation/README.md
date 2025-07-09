@@ -1,6 +1,6 @@
 # **AD O365 Hybrid User Creation**
 
-By Helen Najar, Lionheart | Ballad by Dragons
+By Helen Najar, Lionheart | Ballad by Lionheart
 
 ## **Overview**
 
@@ -104,12 +104,12 @@ Proper backups, naming policies, and organizational approval are strongly recomm
 
 ## **License**
 
-Licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md)
+Licensed under the [MIT License](https://github.com/balladbylionheart/Exchange-Hybrid-Tools/blob/main/LICENSE.md)
 
-Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
+Created and maintained by Helen Najar | Lionheart | [balladbylionheart.com](https://www.balladbylionheart.com)
 
 ---
 
 ## **Contact**
 For questions, enhancements, or feedback:
-📬 [Main README](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/README.md)
+📬 [Main README](https://github.com/balladbylionheart/Exchange-Hybrid-Tools/blob/main/README.md)

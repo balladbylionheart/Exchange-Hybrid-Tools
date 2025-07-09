@@ -1,6 +1,6 @@
 # **AD O365 Hybrid User Termination**
 
-By Helen Najar, Lionheart | Ballad by Dragons
+By Helen Najar, Lionheart | Ballad by Lionheart
 
 ## **Overview**
 
@@ -125,12 +125,12 @@ Test thoroughly in non-production environments. Ensure backups and proper author
 
 ## **License**
 
-This project is licensed under the [MIT License](https://github.com/balladbydragons/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/balladbylionheart/Exchange-Hybrid-Tools/blob/main/LICENSE.md).
 
-Created and maintained by Helen Najar | Lionheart | [BalladByDragons.org](https://www.balladbydragons.org)
+Created and maintained by Helen Najar | Lionheart | [balladbylionheart.com](https://www.balladbylionheart.com)
 ---
 
 ## **Contact**
 
 For questions or suggestions, visit the
-[Ballad by Dragons repository homepage](https://github.com/balladbydragons/Exchange-Hybrid-Tools)
+[Ballad by Lionheart repository homepage](https://github.com/balladbylionheart/Exchange-Hybrid-Tools)
